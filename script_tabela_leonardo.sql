@@ -1,6 +1,6 @@
 create database TILICE;
 use TILICE;
-
+--Tabela usuario
 create table usuario(
 id_usuario int primary key auto_increment,
 usuario varchar(50),
@@ -11,12 +11,15 @@ cpf char(11) not null unique,
 dt_cadastro_usuario datetime default now(),
 constraint cEmail check(email like '%@%' and email like'%.%')
 );
+
+--Tabela container
 create table container(
 	id_container int primary key auto_increment,
     codigoDeSerie varchar(20),
     dtContainer datetime default now()
 );
 
+--Tabela de registro
 create table registro(
 	id_registro int primary key auto_increment,
     temperatura decimal(5,2),
